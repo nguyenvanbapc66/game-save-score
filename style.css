@@ -1,0 +1,126 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background-color: #fbfef9;
+}
+
+#app {
+  margin: 0 auto;
+  /* width: 60% !important; */
+}
+
+#app .header * {
+  /* font-size: larger; */
+}
+
+#app .header h1 {
+  border-bottom: 1px solid #ccc;
+  font-weight: 600;
+}
+
+#app .list-users .player-input {
+  border-radius: 7px;
+  padding: 5px 10px;
+  margin: 5px 0px;
+  border: 1px solid  #bf1363;
+}
+
+
+.player-input::placeholder {
+  color: #ccc;
+}
+
+.player-input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #ccc;
+}
+
+.player-input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #ccc;
+}
+
+
+#app .list-users .btnCreateNewGame {
+    text-transform: uppercase;
+    color: #fbfef9;
+    background-color: #bf1363;
+    margin: 0 auto;
+    padding: 5px 5px;
+    border-radius: 7px;
+}
+
+#app .list-users .btnCreateNewGame:hover{
+    color: #bf1363;
+    background-color: #fbfef9;
+    border: 1px solid #bf1363;
+}
+
+
+
+
+/* Play Screen */
+
+.table .table-head-element {
+    width: calc(100%/5) !important;
+    border: none;
+}
+
+.table .color-head * {
+    color: #fbfef9;
+    background-color: #bf1363;
+    border: none;
+}
+
+.table .table-body-element-input{
+    border-radius: 7px;
+    padding: 5px 5px;
+    border: 1px solid #333;
+    width: 45%;
+}
+
+.table-save-score tbody tr:last-child{
+  border-bottom: 1.75px solid #f14c99;
+}
+
+.btnAddRound{
+  margin: 0 auto;
+  text-transform: uppercase;
+  color: #fbfef9;
+  background-color: #bf1363;
+  border: none;
+  border-radius: 7px;
+}
+
+.btnAddRound:hover{
+  /*  , .btnAddRound:active */
+  color: #bf1363;
+  background-color: #fbfef9;
+  border: 1px solid #bf1363;
+  border-radius: 7px;
+}
+
+/* @media screen and (min-width: 840px){
+  * {
+    font-size: 10px !important;
+  }
+}
+
+
+@media screen and (min-width: 1024px){
+  * {
+    font-size: 12px !important;
+  }
+}
+
+@media screen and (max-width: 425px){
+  * {
+    font-size: 7px !important;
+  }
+} */
