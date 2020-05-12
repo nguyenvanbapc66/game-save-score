@@ -1,0 +1,3 @@
+- Model: Định nghĩa DB của 1 game
+- Controller: method thực các action (tạo game, update điểm)
+- View: Hiện thị
