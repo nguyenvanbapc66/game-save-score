@@ -15,20 +15,39 @@ task1:
 */
 const mongoose = require('mongoose')
 
-let users = new mongoose.Schema(
-    [
-        {playername1: Object},
-        {playername2: String},
-        {playername3: String},
-        {playername4: String}
-    ]
-)
-
-const Users = mongoose.model('Users', users)
-
-let games = new mongoose.Schema({
-    users: new Users(req.body),
-    rounds: []
+let gameSchema = new mongoose.Schema({
+    players: {
+        type: [String],
+        required: true,
+        validate: {
+            validator: function(array) {
+                console.log(array)
+                return array && array.length == 4 && !array.map(function(value) {return value && value.length > 0}).includes(false)
+            }
+        }
+    },
+    rounds: [[Number]]
 })
 
-module.exports = mongoose.model('Games', games)
+const Game = mongoose.model('Game', gameSchema)
+
+let game = {}
+
+game.createGame = function(newGameData, cb) {
+    let newGame = new Game(newGameData)
+    newGame.save(cb)
+}
+
+game.getGameById = async function(gameId, cb) {
+    Game.find(gameId, cb)
+}
+
+game.updateRound = function(gameId, newRound, cb) {
+    Game.update(
+        gameId,
+        {$push: {rounds: newRound}},
+        cb
+    )
+}
+
+module.exports = game
