@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  let form = $("#form");
+  let form = $("#form")
   form.submit(function (e) {
     e.preventDefault();
 
@@ -7,8 +7,8 @@ $(document).ready(function () {
       playername1: form[0].playername1.value,
       playername2: form[0].playername2.value,
       playername3: form[0].playername3.value,
-      playername4: form[0].playername4.value,
-    };
+      playername4: form[0].playername4.value
+    }
 
     let data = {
       players: Object.values(players),
@@ -21,10 +21,10 @@ $(document).ready(function () {
         data: JSON.stringify(data),
         contentType: "application/json",
         success: function (result) {
-            if (result.success) {
-                let gameId = result.data._id;
-                window.location.href = `/games/${gameId}`;
-            }
+          if (result.success) {
+            let gameId = result.data._id;
+            window.location.href = `/games/${gameId}`;
+          }
         }
     })
   })

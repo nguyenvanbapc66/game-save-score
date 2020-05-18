@@ -38,7 +38,7 @@ game.createGame = function(newGameData, cb) {
     newGame.save(cb)
 }
 
-game.getGameById = async function(gameId, cb) {
+game.getGameById = function(gameId, cb) {
     Game.find(gameId, cb)
 }
 
